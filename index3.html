@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch images</title>
+
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div id="preloader"></div>
+    <h1 style="text-align: center; margin: 30px;">Your Favorite Shirt</h1>
+    <div class="product">
+        <div class="product-small-image">
+            <img src="C:\Users\HP\Downloads\viss\image1.jpg" alt="" onclick="changeImage(this)">
+            <img src="C:\Users\HP\Downloads\viss\image2.jpg" alt="" onclick="changeImage(this)">
+            <img src="C:\Users\HP\Downloads\viss\image3.jpg" alt="" onclick="changeImage(this)">
+            
+        </div>
+
+        <div class="image-container">
+            <img src="c:\Users\HP\Downloads\viss\image1.jpg" alt="" id="image-box">
+        </div>
+    </div>
+
+    <script>
+        function changeImage(smallImage){
+            var fullImage = document.getElementById('image-box');
+            fullImage.src = smallImage.src;  
+        }
+    </script>
+
+    <script>
+        let loader = document.getElementById('preloader');
+        window.addEventListener('load', (load)=>{
+            window.removeEventListener("load", load,false);
+            setTimeout(function () {
+                loader.style.display = 'none';
+            },3000);
+        },false);
+    </script>
+</body>
+</html>
